@@ -31,8 +31,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use("/images", express.static(path.join(__dirname, "images")));
 
-const express = require("express");
-
 router.get("/", (req, res) => {
   res.json({
     hello: "hi!",
