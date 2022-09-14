@@ -13,8 +13,6 @@ import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import ServerlessHttp from "serverless-http";
-
 const router = express.Router();
 
 const app = express();
@@ -34,7 +32,6 @@ const __dirname = path.dirname(__filename);
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 const express = require("express");
-const serverless = require("serverless-http");
 
 router.get("/", (req, res) => {
   res.json({
@@ -53,4 +50,4 @@ app.listen(process.env.APP_PORT || 3000, () => {
   console.info(`app running on port ${process.env.APP_PORT}`);
 });
 
-export default ServerlessHttp(app);
+export default app;
